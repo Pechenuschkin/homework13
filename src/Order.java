@@ -22,6 +22,16 @@ public class Order {
             return false;
         }
         Order order = (Order) o;
-        return Objects.equals(customer, order.customer) && Objects.equals(basket, order.basket);
+        if (basket.length == 0 && order.basket.length == 0) return true;
+        if (basket.length != 0 && order.basket.length == 0) return false;
+        if (basket.length == 0 && order.basket.length != 0) return false;
+        if (basket.length != order.basket.length) return false;
+        for (int i = 0; i < basket.length; i++) {
+            if (basket[i] != order.basket[i]) {
+                return false;
+            }
+        }
+        return Objects.equals(customer, order.customer);
     }
+
 }

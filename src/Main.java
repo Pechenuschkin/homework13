@@ -11,7 +11,7 @@ public class Main {
         System.out.println(product1.equals(copyProduct1));
         System.out.println(product1.equals(product2));
         Product[] products = {product1, copyProduct1, product2};
-        Product[] products1 = {product1, product2, copyProduct1};
+        Product[] products1 = {product1, copyProduct1, product1};
         Order ivan = new Order("Иван", products);
         Order copyIvan = new Order("Иван", products);
         Order ivan1 = new Order("Иван", products1);
@@ -20,5 +20,6 @@ public class Main {
         System.out.println(ivan1);
         System.out.println(ivan.equals(copyIvan));
         System.out.println(ivan.equals(ivan1));
+
     }
 }
